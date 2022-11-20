@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 
 const grupoSchema = new mongoose.Schema({
+    id: String,
     profesor: {
         type: mongoose.Schema.Types.ObjectId,
         ref: profesor,
