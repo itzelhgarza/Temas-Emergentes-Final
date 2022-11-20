@@ -1,0 +1,8 @@
+CRUD
+-BD (Mongoose)
+-Backend node js
+REST
+Endpoint
+-Frontend
+Framework
+-Buenas practicas UX
