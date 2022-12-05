@@ -3,16 +3,21 @@ const express = require('express');
 const router = express.Router();
 const estudiantesController = require('../controllers/estudianteController');
 
-
+// localhost:3312/api/v1/estudiantes
 router.get('/estudiantes', estudiantesController.obtenTodos);
 
-// router.get('/estudiantes:id', 'TO DO');
+// localhost:3312/api/v1/estudiantes:id
+router.get('/estudiantes:id',  estudiantesController.obtenId);
 
-// router.post('/nuevoEstudiante', 'TO DO');
+// localhost:3312/api/v1/nuevoEstudiante
+router.post('/nuevoEstudiante', estudiantesController.nuevoEstudiante);
 
-// router.delete('/eliminarEstudiante', 'TO DO');
 
-// router.put('/actualizarEstudiante', 'TO DO');
+// localhost:3312/api/v1/eliminarEstudiante:id
+router.delete('/eliminarEstudiante:id', estudiantesController.eliminarEstudiante);
+
+// localhost:3312/api/v1/actualizarEstudiante
+router.put('/actualizarEstudiante', estudiantesController.actualizarEstudiante);
 
 
 

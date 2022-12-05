@@ -7,4 +7,4 @@ const profesorSchema = new mongoose.Schema({
     materia: String
 });
 
-module.exports = mongoose.model('profesor', profesorSchema);
+module.exports = mongoose.model('Profesores', profesorSchema);
