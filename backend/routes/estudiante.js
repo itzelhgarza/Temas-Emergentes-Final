@@ -12,7 +12,6 @@ router.get('/estudiantes:id',  estudiantesController.obtenId);
 // localhost:3312/api/v1/nuevoEstudiante
 router.post('/nuevoEstudiante', estudiantesController.nuevoEstudiante);
 
-
 // localhost:3312/api/v1/eliminarEstudiante:id
 router.delete('/eliminarEstudiante:id', estudiantesController.eliminarEstudiante);
 

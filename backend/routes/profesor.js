@@ -1,16 +1,23 @@
 //Importar librerías
 const express = require('express');
 const router = express.Router();
+const profesoresController = require('../controllers/profesorController');
+const profesor = require('../models/profesor');
 
-// router.get('/profesor', 'TO DO');
+//localhost:3312/api/v1/profesores
+router.get('/profesores', profesoresController.obtenTodos);
 
-// router.get('/profesor:id', 'TO DO');
+//localhost:3312/api/v1/profesor:id
+router.get('/profesor:id', profesoresController.obtenId);
 
-// router.post('/nuevoProfesor', 'TO DO');
+//localhost:3312/api/v1/nuevoProfesor
+router.post('/nuevoProfesor', profesoresController.nuevoProfesor);
 
-// router.delete('/eliminarProfesor', 'TO DO');
+//localhost:3312/api/v1/eliminarProfesor:id
+router.delete('/eliminarProfesor:id', profesoresController.eliminarProfesor);
 
-// router.put('/actualizarProfesor', 'TO DO');
+//localhost:3312/api/v1/actualizarProfesor
+router.put('/actualizarProfesor', profesoresController.actualizarProfesor);
 
 
 module.exports = router;

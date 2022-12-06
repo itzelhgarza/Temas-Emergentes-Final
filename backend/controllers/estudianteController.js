@@ -27,11 +27,11 @@ const controller = {
         res.status(200).json({"Message": "Se eliminó estudiante"});
     },
     actualizarEstudiante: async (req, res) => {
-        const Estudiante = new Estudiantes(req.body);
-        const id = Estudiante.id;
-        const EstudianteBD = await Estudiantes.findOne({id:id});
-        const _id = EstudianteBD._id;
-        await Estudiantes.findOneAndUpdate({_id:_id},Estudiante);
+        const estudiante = new Estudiantes(req.body);
+        const id = estudiante.id;
+        const estudianteBD = await Estudiantes.findOne({id:id});
+        estudiante._id = estudianteBD._id;
+        await Estudiantes.findOneAndUpdate({_id:estudiante._id},estudiante);
         res.status(200).json({"Message": "Se actualizó el estudiante"});
     }
 }

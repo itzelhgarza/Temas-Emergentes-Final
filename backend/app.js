@@ -4,6 +4,7 @@ const morgan = require('morgan');
 //TO DO módulos de ruta
 const app = express();
 const estudiante = require('./routes/estudiante');
+const profesor = require('./routes/profesor');
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -14,6 +15,7 @@ app.get("/", (req,res)=>{
 
 //TO DO rutas
 app.use("/api/v1/",estudiante);
+app.use("/api/v1/",profesor);
 
 //Exportar
 module.exports = app;
