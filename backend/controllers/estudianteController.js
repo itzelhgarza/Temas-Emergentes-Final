@@ -31,6 +31,7 @@ const controller = {
         const id = estudiante.id;
         const estudianteBD = await Estudiantes.findOne({id:id});
         estudiante._id = estudianteBD._id;
+        console.log(estudiante._id);
         await Estudiantes.findOneAndUpdate({_id:estudiante._id},estudiante);
         res.status(200).json({"Message": "Se actualizó el estudiante"});
     }

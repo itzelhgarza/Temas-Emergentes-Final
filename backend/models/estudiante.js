@@ -7,7 +7,8 @@ const estudianteSchema = new mongoose.Schema({
     aprobado: {
         type: Boolean,
         default:false
-    }
-});
+    }},
+{collection: 'Estudiantes'}
+);
 
 module.exports = mongoose.model('Estudiantes', estudianteSchema);

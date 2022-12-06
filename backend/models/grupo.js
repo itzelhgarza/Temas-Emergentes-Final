@@ -5,14 +5,14 @@ const grupoSchema = new mongoose.Schema({
     id: String,
     profesor: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: profesor,
+        ref: 'profesor',
         autopopulate: true,
     },
     estudiantes:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: estudiante,
+        ref: 'Estudiantes',
         autopopulate: true
     }]
 });
 
-module.exports = mongoose.model('grupo', grupoSchema);
+module.exports = mongoose.model('Grupos', grupoSchema);

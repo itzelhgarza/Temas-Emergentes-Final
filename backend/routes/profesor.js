@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const profesoresController = require('../controllers/profesorController');
-const profesor = require('../models/profesor');
 
 //localhost:3312/api/v1/profesores
 router.get('/profesores', profesoresController.obtenTodos);

@@ -1,10 +1,7 @@
 //Importar librerías
 const mongoose = require('mongoose');
-const estudiante = require('../models/estudiante');
-const profesor = require('../models/profesor');
-mongoose.pluralize(null);
-
 const Profesores = require('../models/profesor');
+mongoose.pluralize(null);
 
 const controller = {
     obtenTodos: async (req,res) => {

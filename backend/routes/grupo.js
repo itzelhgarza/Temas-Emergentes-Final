@@ -1,8 +1,10 @@
 //Importar librerías
 const express = require('express');
 const router = express.Router();
+const gruposController = require('../controllers/grupoController');
 
-// router.get('/grupos', 'TO DO');
+//localhost:3312/api/v1/grupos
+router.get('/grupos', gruposController.obtenTodos);
 
 // router.get('/grupos:id', 'TO DO');
 
