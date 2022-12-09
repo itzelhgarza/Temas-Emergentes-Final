@@ -3,7 +3,8 @@ const mongoose = require ('mongoose');
 const dotenv = require('dotenv');
 /*Configurar variables de entorno*/
 dotenv.config({path: './config.env'});
-const app = require('./app');
+const app = require('./app.js');
+
 
 //Se guarda la constante DATABASE
 const DB = process.env.DATABASE;

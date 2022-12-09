@@ -5,10 +5,20 @@ const morgan = require('morgan');
 const app = express();
 const estudiante = require('./routes/estudiante');
 const profesor = require('./routes/profesor');
-const grupo = require('./routes/grupo');
+const cors = require('cors');
+
 
 app.use(morgan('dev'));
 app.use(express.json());
+
+const corsOptions = {
+    origin: '*',
+    credentials: true,            //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions));
+
 
 app.get("/", (req,res)=>{
     res.status(200).send("Hello world!");

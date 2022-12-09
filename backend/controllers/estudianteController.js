@@ -8,7 +8,7 @@ const controller = {
     obtenTodos: async (req, res) => {
         const listaEstudiantes = await Estudiantes.find();
         console.log(listaEstudiantes);
-        res.status(200).json({ "listaEstudiantes": listaEstudiantes });
+        res.status(200).json(listaEstudiantes);
     },
     obtenId: async (req, res) => {
         const id = req.params.id;
@@ -22,7 +22,7 @@ const controller = {
         res.status(200).json({ "Message": "Se registró un estudiante" });
     },
     eliminarEstudiante: async (req, res) => {
-        const id = req.params.id;
+        const id = req.body.id;
         await Estudiantes.deleteOne({id:id});
         res.status(200).json({"Message": "Se eliminó estudiante"});
     },

@@ -104,7 +104,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"_id\": \"637aa59cb257d1707d9aa5a7\",\r\n    \"id\":\"001\",\r\n    \"nombre\": \"Jose Casal\",\r\n    \"aprobado\": true\r\n}",
+							"raw": "{\r\n    \"id\":\"001\",\r\n    \"nombre\": \"Jose Casal\",\r\n    \"aprobado\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -121,6 +121,154 @@
 								"api",
 								"v1",
 								"actualizarEstudiante"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profesores",
+			"item": [
+				{
+					"name": "Obten todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3312/api/v1/profesores",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"v1",
+								"profesores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obten profesor id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3312/api/v1/profesor001",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"v1",
+								"profesor001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar profesor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"003\",\r\n    \"nombre\": \"Manuel Domitsu\",\r\n    \"materia\": \"Aplicaciones web\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3312/api/v1/nuevoProfesor",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"v1",
+								"nuevoProfesor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar profesor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"001\",\r\n    \"nombre\": \"Alma Chávez\",\r\n    \"materia\": \"Bases de datos Avanzadas II\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3312/api/v1/actualizarProfesor",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"v1",
+								"actualizarProfesor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar profesor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3312/api/v1/eliminarProfesor004",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"v1",
+								"eliminarProfesor004"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Grupos",
+			"item": [
+				{
+					"name": "Obten todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3312/api/v1/grupos",
+							"host": [
+								"localhost"
+							],
+							"port": "3312",
+							"path": [
+								"api",
+								"v1",
+								"grupos"
 							]
 						}
 					},

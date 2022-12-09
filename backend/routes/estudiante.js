@@ -13,7 +13,7 @@ router.get('/estudiantes:id',  estudiantesController.obtenId);
 router.post('/nuevoEstudiante', estudiantesController.nuevoEstudiante);
 
 // localhost:3312/api/v1/eliminarEstudiante:id
-router.delete('/eliminarEstudiante:id', estudiantesController.eliminarEstudiante);
+router.delete('/eliminarEstudiante', estudiantesController.eliminarEstudiante);
 
 // localhost:3312/api/v1/actualizarEstudiante
 router.put('/actualizarEstudiante', estudiantesController.actualizarEstudiante);
