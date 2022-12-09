@@ -10,7 +10,7 @@ export default {
         }
     },
     mounted() {
-        fetch('http://localhost:8080/api/v1/estudiantes')
+        fetch('http://localhost:3312/api/v1/estudiantes')
             .then((response) => response.json())
             .then((data) => (this.listaEstudiantes = data))
     },
@@ -23,7 +23,7 @@ export default {
             }else{
                 status = false;
             }
-            fetch('http://localhost:8080/api/v1/nuevoEstudiante', {
+            fetch('http://localhost:3312/api/v1/nuevoEstudiante', {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({
@@ -40,7 +40,7 @@ export default {
                 });
         },
         eliminarEstudiante(id) {
-            fetch("http://localhost:8080/api/v1/eliminarEstudiante", {
+            fetch("http://localhost:3312/api/v1/eliminarEstudiante", {
                 method: "DELETE",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({
@@ -64,7 +64,7 @@ export default {
             }            
             //Nombres de los elementos html
             if (!(!this.id || !this.nombre || !this.aprobado)) {
-                fetch("http://localhost:8080/api/v1/actualizarEstudiante", {
+                fetch("http://localhost:3312/api/v1/actualizarEstudiante", {
                     method: "PUT",
                     headers: { "Content-type": "application/json" },
                     body: JSON.stringify({
