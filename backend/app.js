@@ -27,7 +27,6 @@ app.get("/", (req,res)=>{
 //TO DO rutas
 app.use("/api/v1/",estudiante);
 app.use("/api/v1/",profesor);
-//app.use("/api/v1/",grupo);
 
 //Exportar
 module.exports = app;
