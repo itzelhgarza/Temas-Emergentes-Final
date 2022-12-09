@@ -1,35 +1,28 @@
 <script>
 export default {
-    name: "ListaEstudiantes",
+    name: "ListaProfesores",
     data() {
         return {
             id: null,
             nombre: null,
-            aprobado: null,
-            listaEstudiantes: []
+            materia: null,
+            listaProfesores: []
         }
     },
     mounted() {
-        fetch('http://localhost:3312/api/v1/estudiantes')
+        fetch('http://localhost:3312/api/v1/profesores')
             .then((response) => response.json())
-            .then((data) => (this.listaEstudiantes = data))
+            .then((data) => (this.listaProfesores = data))
     },
     methods: {
-        agregarEstudiante() {
-            let status;
-            if(this.aprobado == "APROBADO")
-            {
-                status = true;
-            }else{
-                status = false;
-            }
-            fetch('http://localhost:3312/api/v1/nuevoEstudiante', {
+        agregarProfesor() {
+            fetch('http://localhost:3312/api/v1/nuevoProfesor', {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({
                     id: this.id,
                     nombre: this.nombre,
-                    aprobado: status
+                    materia: this.materia
                 })
             })
                 .then((res) => res.json())
@@ -39,8 +32,8 @@ export default {
                     window.location.reload();
                 });
         },
-        eliminarEstudiante(id) {
-            fetch("http://localhost:3312/api/v1/eliminarEstudiante", {
+        eliminarProfesor(id) {
+            fetch("http://localhost:3312/api/v1/eliminarProfesor", {
                 method: "DELETE",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({
@@ -54,23 +47,16 @@ export default {
                     window.location.reload();
                 });
         },
-        actualizarEstudiante(id) {
-            let status;
-            if(this.aprobado == "APROBADO")
-            {
-                status = true;
-            }else{
-                status = false;
-            }            
+        actualizarProfesor(id) {
             //Nombres de los elementos html
-            if (!(!this.id || !this.nombre || !this.aprobado)) {
-                fetch("http://localhost:3312/api/v1/actualizarEstudiante", {
+            if (!(!this.id || !this.nombre || !this.materia)) {
+                fetch("http://localhost:3312/api/v1/actualizarProfesor", {
                     method: "PUT",
                     headers: { "Content-type": "application/json" },
                     body: JSON.stringify({
                         id: id,
                         nombre: this.nombre,
-                        aprobado: status,
+                        materia: this.materia
                     }),
 
                 })
@@ -88,51 +74,35 @@ export default {
 }
 </script>
 
+
 <template>
     <div class="reservation-form">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <form @submit.prevent="agregarEstudiante">
+                    <form @submit.prevent="agregarProfesor">
                         <div class="row">
                             <div class="col-lg-12">
-                                <h1>Estudiantes</h1>
+                                <h1>Profesores</h1>
                             </div>
                             <div class="col-lg-6">
                                 <fieldset>
-                                    <div class="espacio-label">
-                                        <label for="Name" class="form-label">ID: </label>
-                                    </div>
-                                    <div class="espacio-input">
-                                        <input class="input_Margin" v-model="id" type="text" placeholder="..."
-                                            required>
-                                    </div>
+                                    <label for="Name" class="form-label">ID: </label>
+                                    <input class="input_Margin" v-model="id" type="text" placeholder="..." required>
                                 </fieldset>
                                 <fieldset>
-                                    <div class="espacio-label">
-                                        <label for="Name" class="form-label">Nombre: </label>
-                                    </div>
-
-                                    <div class="espacio-input">
-                                        <input class="input_Margin" v-model="nombre" type="text"
-                                        placeholder="..." required>
-                                    </div>
-                                    
+                                    <label for="Name" class="form-label">Nombre: </label>
+                                    <input class="input_Margin" v-model="nombre" type="text" placeholder="..." required>
                                 </fieldset>
-                                    <div class="espacio-label">
-                                        <label for="Name" class="form-label">Estado: </label>
-                                    </div>
-
-                                    <div class="espacio-input">
-                                        <select class="form-control" v-model="aprobado">
-                                            <option>APROBADO</option>
-                                            <option>REPROBADO</option>
-                                        </select>
-                                    </div>  
+                                <fieldset>
+                                    <label for="Name" class="form-label">Materia: </label>
+                                    <input class="input_Margin" v-model="materia" type="text" placeholder="..."
+                                        required>
+                                </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <button id="bregistrarestudiante" class="btn_Registra">Registrar</button>
+                                    <button id="bregistrarprofesor" class="btn_Registra">Registrar</button>
                                 </fieldset>
                             </div>
                         </div>
@@ -142,31 +112,30 @@ export default {
         </div>
     </div>
 
-    <table class="table" id="tablaEstudiantes">
+    <table class="table" id="tablaProfesores">
         <thead>
             <tr class="tr_TableHead">
                 <th style="font-size: 14px;">ID</th>
                 <th style="font-size: 14px;">Nombre</th>
-                <th style="font-size: 14px;">Aprobado</th>
+                <th style="font-size: 14px;">Materia</th>
                 <th style="font-size: 14px;">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <!--For para llenar la tabla-->
-            <tr v-for="estudiante in listaEstudiantes" v-bind:key="estudiante.id">
+            <!-- For para llenar la tabla-->
+            <tr v-for="profesor in listaProfesores" v-bind:key="profesor.id">
                 <!-- nombres del modelo -->
-                <td style="font-size: 13px;">{{ estudiante.id }}</td>
-                <td style="font-size: 13px;">{{ estudiante.nombre }}</td>
-                <td style="font-size: 13px;">{{ estudiante.aprobado }}</td>
+                <td style="font-size: 13px;">{{ profesor.id }}</td>
+                <td style="font-size: 13px;">{{ profesor.nombre }}</td>
+                <td style="font-size: 13px;">{{ profesor.materia }}</td>
                 <td style="font-size: 13px;">
-                    <button class="btn_Actualizar" @click="actualizarEstudiante(estudiante.id)">Actualizar</button>
-                    <button class="btn_Eliminar" @click="eliminarEstudiante(estudiante.id)">Eliminar</button>
+                    <button class="btn_Actualizar" @click="actualizarProfesor(profesor.id)">Actualizar</button>
+                    <button class="btn_Eliminar" @click="eliminarProfesor(profesor.id)">Eliminar</button>
                 </td>
             </tr>
         </tbody>
     </table>
 </template>
-
 
 <style scoped>
 .input_Margin {

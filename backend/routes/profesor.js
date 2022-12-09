@@ -13,7 +13,7 @@ router.get('/profesor:id', profesoresController.obtenId);
 router.post('/nuevoProfesor', profesoresController.nuevoProfesor);
 
 //localhost:3312/api/v1/eliminarProfesor:id
-router.delete('/eliminarProfesor:id', profesoresController.eliminarProfesor);
+router.delete('/eliminarProfesor', profesoresController.eliminarProfesor);
 
 //localhost:3312/api/v1/actualizarProfesor
 router.put('/actualizarProfesor', profesoresController.actualizarProfesor);

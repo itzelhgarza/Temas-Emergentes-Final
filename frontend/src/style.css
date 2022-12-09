@@ -1,12 +1,13 @@
 :root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 24px;
     font-weight: 400;
+    font-style:italic;
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    color-scheme: light;
+    color: rgba(37, 37, 37, 0.87);
+    background-color: #e0e0e0;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -15,29 +16,24 @@
     -webkit-text-size-adjust: 100%;
 }
 
-a {
+/* a {
     font-weight: 500;
-    color: #646cff;
+    color: #545cf2;
     text-decoration: inherit;
+    align-self: left;
 }
 
 a:hover {
-    color: #535bf2;
+    color: #545cf2;
 }
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
 
 a:hover {
-    color: #535bf2;
-}
+    color: #545cf2;
+} */
 
 body {
     margin: 0;
-    display: flex;
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
@@ -46,12 +42,13 @@ body {
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
+    color: #496b8a;
 }
 
 button {
     border-radius: 8px;
     border: 1px solid transparent;
-    padding: 0.6em 1.2em;
+    margin: 4%;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
@@ -60,27 +57,31 @@ button {
     transition: border-color 0.25s;
 }
 
-button:hover {
+/* button:hover {
     border-color: #646cff;
-}
+} */
 
-button:focus,
+/* button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
-.card {
+/* .card {
     padding: 2em;
-}
+} */
 
 #app {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin: 0;
     text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
+div.todo{
+    width: 40%;
+    margin: 5%;
+    display: inline-block;
+}
+
+/* @media (prefers-color-scheme: light) {
     :root {
         color: #213547;
         background-color: #ffffff;
@@ -93,55 +94,74 @@ button:focus-visible {
     button {
         background-color: #f9f9f9;
     }
-}
+} */
 
-form {
-    float: center;
-    display: flex;
+/* form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    color: #ffffff;
+    color: rgb(6, 17, 109);
     font-weight: 510;
-    border-radius: 10px;
-}
+} */
 
 input{
     background-color: aliceblue;
-    margin-left: 10px;
     color: black;
+    height: 24px;
+    border-radius: 12px;
+    border-color: #213547;
+    border-width: 1px;
 }
 
 tr {
     border: #f9f9f9 solid 1px;
-    margin: 10px;
+    margin: 8px;
 }
 
 th {
-    margin: 60px;
-    padding: 10px;
+    margin: 8px;
+    padding: 8px;
 }
 
 td {
-    margin: 60px;
-    padding: 7px;
+    margin: 8px;
+    padding: 8px;
+}
+
+fieldset {
+    border: none;
+}
+
+select{
+    background-color: aliceblue;
+    color: black;
+    height: 24px;
+    border-radius: 12px;
+    border-color: #213547;
+    border-width: 1px;
+}
+
+div.espacio-input{
+    width: 20%;
+    display: inline-block;
+}
+
+div.espacio-label{
+    width: 10%;
+    display: inline-block;
 }
 
 table {
     float: center;
     align-items: center;
     font-family: arial, sans-serif;
-    border: whitesmoke 3px solid;
-    padding: 15px;
-    color: rgb(255, 255, 255);
+    background-color: rgb(198, 205, 218);
+    color: rgba(37, 37, 37, 0.87);
     width: 100%;
     border-radius: 10px;
-    color: #ffffff;
+    color: rgba(37, 37, 37, 0.87);
     font-weight: 700;
     text-align: center;
-    margin-bottom: 70px;
-    margin-top: 50px;
-    margin-right: 90px;
     border-collapse: collapse;
 }

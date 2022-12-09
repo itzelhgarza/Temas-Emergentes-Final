@@ -7,7 +7,7 @@ const controller = {
     obtenTodos: async (req,res) => {
         const listaProfesores = await Profesores.find();
         console.log(listaProfesores);
-        res.status(200).json({"listaProfesores": listaProfesores});
+        res.status(200).json(listaProfesores);
     },
     obtenId: async (req,res) => {
         const id = req.params.id;
@@ -20,7 +20,7 @@ const controller = {
         res.status(200).json({"Message": "Se registró profesor"});
     },
     eliminarProfesor: async (req, res) => {
-        const id = req.params.id;
+        const id = req.body.id;
         await Profesores.deleteOne({id:id});
         res.status(200).json({"Message": "Se eliminó profesor"});
     },
