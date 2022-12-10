@@ -144,7 +144,7 @@ export default {
 
 /* Estilos de botones */
 .btn_Registra {
-    background-color: #065509;
+    background-color: #7fd482;
     border: none;
     color: white;
     padding: 12px 16px;
